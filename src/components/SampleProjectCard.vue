@@ -34,33 +34,29 @@
             getId: function(){
                 return this.id;
             },
-            openModal: function(id) {
+            async openModal(id) {
+                console.log('markdown', await require("../assets/markdown/" + this.getId() + ".md"));
                 var modalTitle;
-                var modalContent;
+                const modalContent = (await require("../assets/markdown/" + this.getId() + ".md")).default;
                 switch (id) {
                     case '1-1': {
                         modalTitle = 'オセロ 一回目 説明';
-                        modalContent = '今回はオセロのマス目を線で引く。コマをマウスプレスで置く。ところまで行ってみたいと思います。';
                         break;
                     }
                     case '1-2': {
                         modalTitle = 'オセロ 二回目 説明';
-                        modalContent = 'オセロのボードを配列で作ります。１に白いコマ、２に黒いコマが置ける様にします。';
                         break;
                     }
                     case '1-3': {
                         modalTitle = 'オセロ 三回目 説明';
-                        modalContent = 'コマが置かれるときに、対戦相手のコマをめくります。';
                         break;
                     }
                     case '1-4': {
                         modalTitle = 'オセロ 四回目 説明';
-                        modalContent = '対戦相手のコマがめくれない（挟まれない）位置に、自分のコマを置けない様にします。';
                         break;
                     }
                     case '1-5': {
                         modalTitle = 'オセロ 五回目 説明';
-                        modalContent = '対戦システムのボタンなどを実装します。';
                         break;
                     }
                     default:
