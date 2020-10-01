@@ -50,6 +50,10 @@ module.exports = {
         }
       },
       {
+        test: /\.(txt|md|markdown)$/i,
+        use: 'raw-loader',
+      },
+      {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
         loader: 'url-loader',
         options: {
