@@ -49,8 +49,6 @@
         mounted(){
             const KIND = 3;
             const MODE = Math.ceil(Math.random() * KIND);
-            this.$refs.header.setHeader(MODE);
-            this.$refs.footer.setFooter(MODE);
         },
         methods: {
             updateText: function (code) {
