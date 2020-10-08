@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "element-ui": "^2.4.9",
+    "markdown-it": "^11.0.1",
     "vue": "^2.5.2"
   },
   "devDependencies": {

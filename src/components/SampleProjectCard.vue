@@ -19,6 +19,9 @@
 
 <script>
 
+    import MarkdownIt from 'markdown-it';
+    const md = new MarkdownIt();
+
     export default {
         data() {
             return {
@@ -38,6 +41,7 @@
                 console.log('markdown', await require("../assets/markdown/" + this.getId() + ".md"));
                 var modalTitle;
                 const modalContent = (await require("../assets/markdown/" + this.getId() + ".md")).default;
+                const modalContentHtml = md.render(modalContent);
                 switch (id) {
                     case '1-1': {
                         modalTitle = 'オセロ 一回目 説明';
@@ -63,7 +67,7 @@
                         return false;
                 }
                 this.$alert(
-                    modalContent,
+                    modalContentHtml,
                     modalTitle,
                     {
                         dangerouslyUseHTMLString: true
