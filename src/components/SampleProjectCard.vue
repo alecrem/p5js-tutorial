@@ -70,7 +70,8 @@
                     modalContentHtml,
                     modalTitle,
                     {
-                        dangerouslyUseHTMLString: true
+                        dangerouslyUseHTMLString: true,
+                        customClass: 'instructionsModal',
                     }
                 );
             },
@@ -193,4 +194,15 @@
         clear: both
     }
 
+</style>
+<style>
+    .instructionsModal {
+        width: 80%;
+        max-height: 100%;
+        overflow-y: scroll;
+    }
+    .instructionsModal .el-message-box__header {
+    }
+    .instructionsModal .el-message-box__message {
+    }
 </style>
